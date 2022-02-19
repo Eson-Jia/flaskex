@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block body %}
+    {% include "navbar.html" %}
+    <section class="hero is-primary is-bold is-large">
+        <div class="hero-body">
+            <title>上传图片</title>
+            <p>上传两张需要智能拼接的图片</p>
+            <form method=post enctype=multipart/form-data>
+                <div>
+                    <label for="first">第一张图片位于上方:</label>
+                    <input type=file name=first accept="image/vnd.sealedmedia.softseal.jpg,image/jpeg,image/png">
+                </div>
+                <div>
+                    <label for="second">第二张图片位于下方:</label>
+                    <input type=file name=second accept="image/vnd.sealedmedia.softseal.jpg,image/jpeg,image/png">
+                </div>
+                <div>
+                    <input type=submit value=Upload>
+                </div>
+            </form>
+            <link rel="stylesheet" href="../static/css/upload.css">
+        </div>
+    </section>
+{% endblock %}
+{% block scripts %}
+    <script src="../static/js/scripts.js"></script>
+{% endblock %}
